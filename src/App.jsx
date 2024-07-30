@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useInput from './useInput';
 import useTab from './useTab';
+import useTitle from './useTitle';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -20,7 +21,11 @@ function App() {
     //currentItem은 현재 나타낼 값
     //changeItem은 현재 나타낼 값을 바꿀 수 있게 해주는 함수
     //currentItem이 index값에 따라서 바뀌는 것이기 때문에 changeItem에 index값을 넘겨주며 currentItem을 바꿔줌
-    //
+
+    const titleUpdator = useTitle('Loading..');
+    setTimeout(() => {
+        titleUpdator('Home');
+    }, 5000);
 
     return (
         <div>
@@ -47,7 +52,8 @@ function App() {
                  */}
             </div>
             <div>
-                <h1></h1>
+                <h1>useTitle 기능</h1>
+                <div>처음 마운트 되고 5초 뒤에 탭 이름이 Home으로 바뀜</div>
             </div>
         </div>
     );
