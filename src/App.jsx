@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import useInput from './useInput';
 import useTab from './useTab';
 import useTitle from './useTitle';
+import useClick from './useClick';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -26,6 +27,11 @@ function App() {
     setTimeout(() => {
         titleUpdator('Home');
     }, 5000);
+    const sayHello = () => {
+        console.log("say Hello")
+    }
+    const context = useClick(sayHello);//useClick을 호출해주면서 elementRef를 얻게 됨
+    //context는 참조를 감지할 수 있는 변수가 됨 
 
     return (
         <div>
@@ -57,7 +63,7 @@ function App() {
             </div>
             <div>
                 <h1>useClick 기능</h1>
-                <div></div>
+                <div style={{ backgroundColor: "yellow" }} ref={context}>여기를 클릭하면 콘솔에 무언가 뜹니다</div>
             </div>
         </div>
     );
