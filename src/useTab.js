@@ -1,5 +1,11 @@
 import { useState } from 'react';
 
+/**
+ *
+ * @param { number } initialTab 처음 띄우고 싶은 배열의 인덱스
+ * @param { array } allTabs 다루고 싶은 배열
+ * @returns currentItem : 바뀐 배열의 인덱스, changeItem : setCurrentIndex함수 -> 인덱스를 바꾸는 함수
+ */
 const useTab = (initialTab, allTabs) => {
     const [currentIndex, setCurrentIndex] = useState(initialTab);
     if (!allTabs || !Array.isArray(allTabs)) {

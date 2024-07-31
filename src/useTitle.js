@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 
+/**
+ *
+ * @param {*} initialTitle
+ * @returns
+ */
 const useTitle = (initialTitle) => {
     const [title, setTitle] = useState(initialTitle);
     const updateTitle = () => {

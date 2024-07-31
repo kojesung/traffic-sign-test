@@ -55,6 +55,10 @@ function App() {
                 <h1>useTitle 기능</h1>
                 <div>처음 마운트 되고 5초 뒤에 탭 이름이 Home으로 바뀜</div>
             </div>
+            <div>
+                <h1>useClick 기능</h1>
+                <div></div>
+            </div>
         </div>
     );
 }

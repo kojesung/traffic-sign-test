@@ -1,5 +1,11 @@
 import { useState } from 'react';
 
+/**
+ *
+ * @param {string} initialValue input박스의 초기 내용
+ * @param {Function} validator input박스에 들어갈 내용에 대한 유효성을 검사해줄 함수(T/F 형태로 반환해주어야 함)
+ * @returns 바뀌는 value와 event를 감지하고 변환해주는 onChange함수가 반환되어 자동으로 value가 바뀜
+ */
 const useInput = (initialValue, validator) => {
     //처음에 default값을 지정하고 그 값이 변할 수 있도록 해주는 기능
     const [value, setValue] = useState(initialValue);
