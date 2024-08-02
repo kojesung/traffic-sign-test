@@ -4,6 +4,7 @@ import useTab from './useTab';
 import useTitle from './useTitle';
 import useClick from './useClick';
 import useConfirm from './useConfirm';
+import usePreventLeave from './usePreventLeave';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -41,6 +42,8 @@ function App() {
         console.log('stop deleting');
     };
     const confirmDelete = useConfirm('Are you sure?', deleteSomething, stoppppp);
+
+    const { addPrevent, removePrevent } = usePreventLeave(); //usePreventLeave를 함수처리해주어야 작동함, 함수형 컴포넌트라 그런건가?
     return (
         <div>
             <div>
@@ -78,6 +81,11 @@ function App() {
             <div>
                 <h1>useConfirm 기능</h1>
                 <button onClick={confirmDelete}>무언가 삭제하는 버튼</button>
+            </div>
+            <div>
+                <h1>usePreventLeave 기능</h1>
+                <button onClick={addPrevent}>경고 기능 추가</button>
+                <button onClick={removePrevent}>경고 기능 삭제</button>
             </div>
         </div>
     );

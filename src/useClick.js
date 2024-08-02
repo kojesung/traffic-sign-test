@@ -20,7 +20,7 @@ const useClick = (onClick) => {
         return () => {
             //mount되어 위에 함수가 실행되면 unmount가 될때까지 기다리며 밑에 함수 작동을 대기
             if (element.current) {
-                element.current.removeEventListener('click', onClick);
+                element.current.removeEventListener('click', onClick); //컴포넌트의 생명 주기를 고려한
             }
         };
     }, []);
