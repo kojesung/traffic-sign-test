@@ -23,3 +23,7 @@ useClick 훅은 인자로 참조할 무언가를 클릭했을 때 작동시킬 �
 # useConfirm
 
 useConfirm 훅은 인자로 경고창 메세지, 확인 및 취소했을 때의 호출할 함수를 받음
+
+# usePrevent
+
+usePrevent 호출하면 바로 함수 2개를 반환해줌. 첫번째 함수는 `addPrevent`함수로 웹 페이지에서 페이지를 닫을 때 어떤 함수를 작동시키게 하는 기능을 하고 두번째 함수는 `removePrevent`로 해당 함수가 동작하지 않도록 바꿔주는 기능을 함
