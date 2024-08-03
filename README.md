@@ -27,3 +27,8 @@ useConfirm 훅은 인자로 경고창 메세지, 확인 및 취소했을 때의 
 # usePrevent
 
 usePrevent 호출하면 바로 함수 2개를 반환해줌. 첫번째 함수는 `addPrevent`함수로 웹 페이지에서 페이지를 닫을 때 어떤 함수를 작동시키게 하는 기능을 하고 두번째 함수는 `removePrevent`로 해당 함수가 동작하지 않도록 바꿔주는 기능을 함
+
+# useBeforeLeave
+
+마우스가 어떤 객체를 나가기 전에 작동시킬 함수를 지정하는 훅임.
+onBefore상황에 작동시킬 함수와 지정할 객체를 전달시켜주는 divRef를 인자로 받고 divRef.current에 addEventlistener를 추가하여 객체에 상황별 작동시킬 함수를 지정해주었음.

@@ -5,6 +5,7 @@ import useTitle from './useTitle';
 import useClick from './useClick';
 import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
+import useBeforeLeave from './useBeforeLeave';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -44,6 +45,13 @@ function App() {
     const confirmDelete = useConfirm('Are you sure?', deleteSomething, stoppppp);
 
     const { addPrevent, removePrevent } = usePreventLeave(); //usePreventLeave를 함수처리해주어야 작동함, 함수형 컴포넌트라 그런건가?
+
+    const divRef = useRef();
+    const doWhenMouseLeave = () => {
+        console.log('나가지마세여');
+    };
+    useBeforeLeave(doWhenMouseLeave, divRef);
+
     return (
         <div>
             <div>
@@ -86,6 +94,12 @@ function App() {
                 <h1>usePreventLeave 기능</h1>
                 <button onClick={addPrevent}>경고 기능 추가</button>
                 <button onClick={removePrevent}>경고 기능 삭제</button>
+            </div>
+            <div>
+                <h1>useBeforeLeabe 기능</h1>
+                <div ref={divRef} style={{ backgroundColor: 'yellowgreen' }}>
+                    마우스가 화면을 나가면 무언가 동작합니다
+                </div>
             </div>
         </div>
     );
