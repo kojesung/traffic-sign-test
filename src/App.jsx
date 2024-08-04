@@ -6,11 +6,12 @@ import useClick from './useClick';
 import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
+import useFadeIn from './useFadeIn';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
     const name = useInput('Mr. ', maxLength); //return되는 value와 onChange를 사용할 수 있음
-    /////////////////////////////////////////////////////////
+
     const content = [
         {
             tab: '첫번째 탭',
@@ -51,6 +52,9 @@ function App() {
         console.log('나가지마세여');
     };
     useBeforeLeave(doWhenMouseLeave, divRef);
+
+    const fadeInH1 = useFadeIn(3, 2);
+    const fadeInDiv = useFadeIn(5, 3);
 
     return (
         <div>
@@ -100,6 +104,14 @@ function App() {
                 <div ref={divRef} style={{ backgroundColor: 'yellowgreen' }}>
                     마우스가 화면을 나가면 무언가 동작합니다
                 </div>
+            </div>
+            <div>
+                <h1 {...fadeInH1}>useFadeIn 기능</h1>
+                <div {...fadeInDiv}>useFadeIn은 이 태그들이 천천히 나타나게 해줍니다</div>
+            </div>
+            <div>
+                <h1>useNetwork 기능</h1>
+                <div></div>
             </div>
         </div>
     );

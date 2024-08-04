@@ -26,9 +26,16 @@ useConfirm 훅은 인자로 경고창 메세지, 확인 및 취소했을 때의 
 
 # usePrevent
 
-usePrevent 호출하면 바로 함수 2개를 반환해줌. 첫번째 함수는 `addPrevent`함수로 웹 페이지에서 페이지를 닫을 때 어떤 함수를 작동시키게 하는 기능을 하고 두번째 함수는 `removePrevent`로 해당 함수가 동작하지 않도록 바꿔주는 기능을 함
+usePrevent 훅은 호출하면 바로 함수 2개를 반환해줌. 첫번째 함수는 `addPrevent`함수로 웹 페이지에서 페이지를 닫을 때 어떤 함수를 작동시키게 하는 기능을 하고 두번째 함수는 `removePrevent`로 해당 함수가 동작하지 않도록 바꿔주는 기능을 함
 
 # useBeforeLeave
 
 마우스가 어떤 객체를 나가기 전에 작동시킬 함수를 지정하는 훅임.
 onBefore상황에 작동시킬 함수와 지정할 객체를 전달시켜주는 divRef를 인자로 받고 divRef.current에 addEventlistener를 추가하여 객체에 상황별 작동시킬 함수를 지정해주었음.
+
+# useFadeIn
+
+useFadeIn 훅은 ref와 style을 반환하기 때문에 값을 각각 다루는 것이 아니라면 `{...ref}`를 통해서 사용할 수 있음.
+useRef객체를 통해서 opacity값을 조정하는 과정을 거치며 조금씩 선명하게 보이도록 함
+해당 훅의 인자로는 몇 초 뒤에 값을 보이게 할지, 앞의 작업을 몇 초 뒤에 실시할지를 정할 수 있음.
+이 작업을 sytle 요소의 transition과 opacity를 통해 구현하였음.
