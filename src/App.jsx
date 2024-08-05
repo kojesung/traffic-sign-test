@@ -7,6 +7,7 @@ import useConfirm from './useConfirm';
 import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
+import useNetwork from './useNetwork';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -56,6 +57,11 @@ function App() {
     const fadeInH1 = useFadeIn(3, 2);
     const fadeInDiv = useFadeIn(5, 3);
 
+    const handleNetworkChange = (onLine) => {
+        console.log(onLine ? 'ddd1' : 'ddd2');
+    };
+    const onLine = useNetwork(handleNetworkChange); //네트워크 상태를 T/F로 받음
+
     return (
         <div>
             <div>
@@ -100,7 +106,7 @@ function App() {
                 <button onClick={removePrevent}>경고 기능 삭제</button>
             </div>
             <div>
-                <h1>useBeforeLeabe 기능</h1>
+                <h1>useBeforeLeave 기능</h1>
                 <div ref={divRef} style={{ backgroundColor: 'yellowgreen' }}>
                     마우스가 화면을 나가면 무언가 동작합니다
                 </div>
@@ -111,7 +117,9 @@ function App() {
             </div>
             <div>
                 <h1>useNetwork 기능</h1>
-                <div></div>
+                <div>👇👇👇👇👇온라인 오프라인 상태가 텍스트로 나타납니다.</div>
+                <div>{onLine ? 'onLine' : 'offLine'}</div>
+                <div>콘솔창도 확인해보기</div>
             </div>
         </div>
     );

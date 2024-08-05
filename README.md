@@ -39,3 +39,7 @@ useFadeIn 훅은 ref와 style을 반환하기 때문에 값을 각각 다루는 
 useRef객체를 통해서 opacity값을 조정하는 과정을 거치며 조금씩 선명하게 보이도록 함
 해당 훅의 인자로는 몇 초 뒤에 값을 보이게 할지, 앞의 작업을 몇 초 뒤에 실시할지를 정할 수 있음.
 이 작업을 sytle 요소의 transition과 opacity를 통해 구현하였음.
+
+# useNetwork
+
+useNetwork 훅은 True/False로 반환해주는 `navigator.online`을 통해 온/오프라인 상태를 감지하고 상태가 변할 때 호출할 함수를 인자로 받음.
