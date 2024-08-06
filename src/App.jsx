@@ -9,6 +9,7 @@ import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
 import useScroll from './useScroll';
+import useFullScreen from './useFullScreen';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -59,13 +60,15 @@ function App() {
     const fadeInDiv = useFadeIn(5, 3);
 
     const handleNetworkChange = (onLine) => {
-        console.log(onLine ? 'ddd1' : 'ddd2');
+        console.log(onLine ? '온라인이세요' : '오프라인이세요');
     };
     const onLine = useNetwork(handleNetworkChange); //네트워크 상태를 T/F로 받음
 
     const { y } = useScroll();
+
+    const { fullScreenElement, toFullScreen, toSmallScreen } = useFullScreen();
     return (
-        <div style={{ height: "200vh" }}>
+        <div style={{ height: '200vh' }}>
             <div>
                 <h1>useInput 기능</h1>
                 <input placeholder="Name" {...name} />
@@ -109,11 +112,12 @@ function App() {
             </div>
             <div>
                 <h1>useScroll 기능</h1>
-                <div style={{ position: 'fixed', color: y > 100 ? "red" : "blue" }}>스크롤의 y 좌표에 따라 해당 텍스트의 색이 바뀝니다</div>
+                <div style={{ position: 'fixed', color: y > 100 ? 'red' : 'blue' }}>
+                    스크롤의 y 좌표에 따라 해당 텍스트의 색이 바뀝니다
+                </div>
             </div>
             <div>
-                <h1 style={{ height: "0.3vh" }}></h1>
-
+                <h1 style={{ height: '0.3vh' }}></h1>
             </div>
             <div>
                 <h1>useBeforeLeave 기능</h1>
@@ -134,7 +138,13 @@ function App() {
 
             <div>
                 <h1>useFullScreen 기능</h1>
-                <div></div>
+                <div>
+                    <div ref={fullScreenElement}>
+                        <img src="https://i.ibb.co/R6RwNxx/grape.jpg" alt="grape" />
+                        <button onClick={toSmallScreen}>다시 작게</button>
+                    </div>
+                    <button onClick={toFullScreen}>전체화면으로</button>
+                </div>
             </div>
         </div>
     );

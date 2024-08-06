@@ -47,3 +47,8 @@ useNetwork 훅은 True/False로 반환해주는 `navigator.online`을 통해 온
 # useScroll
 
 useScroll 훅은 useEffect훅을 통해서 window인스턴스로 scroll의 변화를 감지하고 변화가 생길 때 값을 받아내어 useState 훅을 통해 값을 초기화해주는 기능을 함. 이를 통해서 스크롤의 y 좌표에 대한 동적인 화면을 제공할 수 있음.
+
+# useFullScreen
+
+useFullScreen 훅은 useRef로 참조할 객체, fullScreen으로 만둘어주는 함수, 다시 원래 크리고 돌려주는 함수 3가지를 반환해줌. 원하는 객체에 ref를 설정해주고 뒤에 두 함수를 호출시키면 객체의 크기를 조절시켜줌.
+브라우저마자 fullScreen()함수의 이름이 달라서 각각 설정해줘야함
