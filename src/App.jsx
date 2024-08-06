@@ -8,6 +8,7 @@ import usePreventLeave from './usePreventLeave';
 import useBeforeLeave from './useBeforeLeave';
 import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
+import useScroll from './useScroll';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -62,8 +63,9 @@ function App() {
     };
     const onLine = useNetwork(handleNetworkChange); //네트워크 상태를 T/F로 받음
 
+    const { y } = useScroll();
     return (
-        <div>
+        <div style={{ height: "200vh" }}>
             <div>
                 <h1>useInput 기능</h1>
                 <input placeholder="Name" {...name} />
@@ -106,6 +108,14 @@ function App() {
                 <button onClick={removePrevent}>경고 기능 삭제</button>
             </div>
             <div>
+                <h1>useScroll 기능</h1>
+                <div style={{ position: 'fixed', color: y > 100 ? "red" : "blue" }}>스크롤의 y 좌표에 따라 해당 텍스트의 색이 바뀝니다</div>
+            </div>
+            <div>
+                <h1 style={{ height: "0.3vh" }}></h1>
+
+            </div>
+            <div>
                 <h1>useBeforeLeave 기능</h1>
                 <div ref={divRef} style={{ backgroundColor: 'yellowgreen' }}>
                     마우스가 화면을 나가면 무언가 동작합니다
@@ -120,6 +130,11 @@ function App() {
                 <div>👇👇👇👇👇온라인 오프라인 상태가 텍스트로 나타납니다.</div>
                 <div>{onLine ? 'onLine' : 'offLine'}</div>
                 <div>콘솔창도 확인해보기</div>
+            </div>
+
+            <div>
+                <h1>useFullScreen 기능</h1>
+                <div></div>
             </div>
         </div>
     );

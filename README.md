@@ -43,3 +43,7 @@ useRef객체를 통해서 opacity값을 조정하는 과정을 거치며 조금�
 # useNetwork
 
 useNetwork 훅은 True/False로 반환해주는 `navigator.online`을 통해 온/오프라인 상태를 감지하고 상태가 변할 때 호출할 함수를 인자로 받음.
+
+# useScroll
+
+useScroll 훅은 useEffect훅을 통해서 window인스턴스로 scroll의 변화를 감지하고 변화가 생길 때 값을 받아내어 useState 훅을 통해 값을 초기화해주는 기능을 함. 이를 통해서 스크롤의 y 좌표에 대한 동적인 화면을 제공할 수 있음.
