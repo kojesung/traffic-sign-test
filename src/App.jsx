@@ -10,6 +10,7 @@ import useFadeIn from './useFadeIn';
 import useNetwork from './useNetwork';
 import useScroll from './useScroll';
 import useFullScreen from './useFullScreen';
+import useNotification from './useNotification';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -67,6 +68,9 @@ function App() {
     const { y } = useScroll();
 
     const { fullScreenElement, toFullScreen, toSmallScreen } = useFullScreen();
+
+    const triggerNotification = useNotification('알람이 뜹니다', { body: '어쩌구' });
+    //이렇게하면 함수 자체를 전달하는 것이 아니라 함수를 호출하고 return값을 전달하는 것
     return (
         <div style={{ height: '200vh' }}>
             <div>
@@ -117,7 +121,7 @@ function App() {
                 </div>
             </div>
             <div>
-                <h1 style={{ height: '0.3vh' }}></h1>
+                <div style={{ height: '0.3vh' }}></div>
             </div>
             <div>
                 <h1>useBeforeLeave 기능</h1>
@@ -145,6 +149,10 @@ function App() {
                     </div>
                     <button onClick={toFullScreen}>전체화면으로</button>
                 </div>
+            </div>
+            <div>
+                <h1>useNotification 기능</h1>
+                <button onClick={triggerNotification}>이거 누르면 알람이 떠요</button>
             </div>
         </div>
     );
