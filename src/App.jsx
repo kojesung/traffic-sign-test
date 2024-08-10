@@ -11,6 +11,7 @@ import useNetwork from './useNetwork';
 import useScroll from './useScroll';
 import useFullScreen from './useFullScreen';
 import useNotification from './useNotification';
+import useAxios from './useAxios';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -70,9 +71,13 @@ function App() {
     const { fullScreenElement, toFullScreen, toSmallScreen } = useFullScreen();
 
     const triggerNotification = useNotification('알람이 뜹니다', { body: '어쩌구' });
-    //이렇게하면 함수 자체를 전달하는 것이 아니라 함수를 호출하고 return값을 전달하는 것
+
+    const { loading, data, error, refetch } = useAxios({
+        url: 'https://yts.mx/api/v2/list_movies.json',
+    });
+    console.log(loading, data, error);
     return (
-        <div style={{ height: '200vh' }}>
+        <div style={{ height: '2000vh' }}>
             <div>
                 <h1>useInput 기능</h1>
                 <input placeholder="Name" {...name} />
@@ -153,6 +158,11 @@ function App() {
             <div>
                 <h1>useNotification 기능</h1>
                 <button onClick={triggerNotification}>이거 누르면 알람이 떠요</button>
+            </div>
+            <div>
+                <h1>useAxios 기능</h1>
+                <h2>{data ? `data status : ${data.status}` : 'loading'}</h2>
+                <button onClick={refetch}>refetch</button>
             </div>
         </div>
     );
