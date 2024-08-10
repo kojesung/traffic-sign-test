@@ -52,3 +52,12 @@ useScroll 훅은 useEffect훅을 통해서 window인스턴스로 scroll의 변�
 
 useFullScreen 훅은 useRef로 참조할 객체, fullScreen으로 만둘어주는 함수, 다시 원래 크리고 돌려주는 함수 3가지를 반환해줌. 원하는 객체에 ref를 설정해주고 뒤에 두 함수를 호출시키면 객체의 크기를 조절시켜줌.
 브라우저마자 fullScreen()함수의 이름이 달라서 각각 설정해줘야함
+
+# useNotification
+
+useNotification 훅은 인자로 title과 option을 받고 함수 내부에서 window안에 Notification 속성이 있는지 검증을 함 속성이 있다면
+알람 확인 절차를 거치고 알람이 허용되어있다면 `new Notification(title, option)`을 통해서 알람을 띄워주는 fireNotif함수를 반환해줌
+
+# useAxios
+
+useAxios 훅은 인자로 접근할 URL을 보내면 useAxios 내부에서 defaultAxios가 접근한 후 loading 상태, error나 data의 반환값을 useState를 통해 변경해준 뒤 반환해주는 훅이다. 내부에서 refetch라는 함수를 만들었는데 이 함수 내부의 trigger라는 상태는 `Date.now`의 값을 갖고 있어서 refetch가 호출되면 trigger의 상태 값이 바뀌게 되는데 useAxios 내부의 url에 접근하는 로직이 trigger상태에 의존하고 있기 때문에 refetch를 호출하면 useAxios가 다시 호출되는 원리를 가지고 있음.
