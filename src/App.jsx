@@ -177,7 +177,7 @@ function App() {
                 <button onClick={refetch}>refetch</button>
             </div>
             <div>
-                <h1>useMemo 기능</h1>
+                <h1>React.memo 기능</h1>
                 <input value={value} onChange={(e) => setValue(e.target.value)} />
                 <div style={{ display: 'flex' }}>
                     <A value={value} post={post} />
