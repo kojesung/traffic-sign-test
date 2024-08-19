@@ -87,7 +87,6 @@ function App() {
             .then((response) => response.json())
             .then((posts) => setPost(posts));
     }, []);
-
     return (
         <div style={{ height: '2000vh' }}>
             <div>
