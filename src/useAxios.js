@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 //     key2: 'value2'
 // }); 형식으로 사용 가능
 const useAxios = (opts, axiosInstance = defaultAxios) => {
+    console.log(opts);
     const [state, setState] = useState({
         loading: true,
         error: null,
@@ -32,7 +33,6 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
                 data,
             });
         });
-        console.log('이건 왜 안됨?');
     }, [trigger]);
 
     if (!opts.url) {

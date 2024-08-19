@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useInput from './useInput';
 import useTab from './useTab';
 import useTitle from './useTitle';
@@ -12,6 +12,8 @@ import useScroll from './useScroll';
 import useFullScreen from './useFullScreen';
 import useNotification from './useNotification';
 import useAxios from './useAxios';
+import A from './A';
+import B from './B';
 
 function App() {
     const maxLength = (value) => value.length < 10; //유효성 검사할 함수
@@ -76,6 +78,16 @@ function App() {
         url: 'https://yts.mx/api/v2/list_movies.json',
     });
     console.log(loading, data, error);
+
+    const [value, setValue] = useState('');
+    const [post, setPost] = useState([]);
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then((response) => response.json())
+            .then((posts) => setPost(posts));
+    }, []);
+
     return (
         <div style={{ height: '2000vh' }}>
             <div>
@@ -163,6 +175,14 @@ function App() {
                 <h1>useAxios 기능</h1>
                 <h2>{data ? `data status : ${data.status}` : 'loading'}</h2>
                 <button onClick={refetch}>refetch</button>
+            </div>
+            <div>
+                <h1>useMemo 기능</h1>
+                <input value={value} onChange={(e) => setValue(e.target.value)} />
+                <div style={{ display: 'flex' }}>
+                    <A value={value} post={post} />
+                    <B value={value} post={post} />
+                </div>
             </div>
         </div>
     );
