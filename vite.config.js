@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    base: '/traffic-sign-test/',
+    base: './', // 이 부분을 변경
     plugins: [react()],
     build: {
         rollupOptions: {
