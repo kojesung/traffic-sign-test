@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import 도시부수정본 from './assets/인공실도시부수정본.png';
-import 갓길주차수정본 from './assets/인공실갓길주차수정본.png';
-import 우측차로수정본 from './assets/인공실우측차로없어짐수정본.png';
-import 노면울퉁불퉁수정본 from './assets/인공실노면울퉁불퉁함수정본.png';
-import 위험물적재수정본 from './assets/인공실위험물적재차량출입금지수정본.png';
 import styled from 'styled-components';
-
+import 도시부수정본 from '/src/assets/인공실도시부수정본.png';
+import 갓길주차수정본 from '/src/assets/인공실갓길주차수정본.png';
+import 우측차로수정본 from '/src/assets/인공실우측차로없어짐수정본.png';
+import 노면울퉁불퉁수정본 from '/src/assets/인공실노면울퉁불퉁함수정본.png';
+import 위험물적재수정본 from '/src/assets/인공실위험물적재차량출입금지수정본.png';
 const Test = () => {
     const [stage, setStage] = useState(0);
     const [showSign, setShowSign] = useState(true);
