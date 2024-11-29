@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import 도시부수정본 from './assets/인공실도시부수정본.png';
-import 갓길주차수정본 from './assets/인공실갓길주차수정본.png';
-import 우측차로수정본 from './assets/인공실우측차로없어짐수정본.png';
-import 노면울퉁불퉁수정본 from './assets/인공실노면울퉁불퉁함수정본.png';
-import 위험물적재수정본 from './assets/인공실위험물적재차량출입금지수정본.png';
+import id_1 from './assets/id_1.png';
+import id_2 from './assets/id_2.png';
+import id_3 from './assets/id_3.png';
+import id_4 from './assets/id_4.png';
+import id_5 from './assets/id_5.png';
+import id_6 from './assets/id_6.png';
+import id_7 from './assets/id_7.png';
+import id_8 from './assets/id_8.png';
+import id_9 from './assets/id_9.png';
+import id_10 from './assets/id_10.png';
+import id_11 from './assets/id_11.png';
+import id_12 from './assets/id_12.png';
 const Test = () => {
     const [stage, setStage] = useState(0);
     const [showSign, setShowSign] = useState(true);
@@ -39,29 +46,29 @@ const Test = () => {
     const getSignType = (stage) => {
         switch (stage) {
             case 1:
-                return '도시부_원본';
+                return 'case : 1';
             case 2:
-                return '도시부_수정';
+                return 'case : 2';
             case 3:
-                return '갓길주차_원본';
+                return 'case : 3';
             case 4:
-                return '갓길주차_수정';
+                return 'case : 4';
             case 5:
-                return '노면울퉁불퉁_원본';
+                return 'case : 5';
             case 6:
-                return '노면울퉁불퉁_수정';
+                return 'case : 6';
             case 7:
-                return '표지판7_원본';
+                return 'case : 7';
             case 8:
-                return '표지판8_수정';
+                return 'case : 8';
             case 9:
-                return '표지판9_원본';
+                return 'case : 9';
             case 10:
-                return '표지판10_수정';
+                return 'case : 10';
             case 11:
-                return '표지판11_원본';
+                return 'case : 11';
             case 12:
-                return '표지판12_수정';
+                return 'case : 12';
             default:
                 return '알수없음';
         }
@@ -101,7 +108,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <div>도시부 원본 사진</div>
+                            <img src={id_1} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -126,7 +133,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_2} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -151,7 +158,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_3} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -176,7 +183,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={갓길주차수정본} style={{ width: '300px' }} />
+                            <img src={id_4} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -201,7 +208,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_5} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -226,7 +233,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={우측차로수정본} style={{ width: '300px' }} />
+                            <img src={id_6} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -251,7 +258,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_7} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -276,7 +283,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={노면울퉁불퉁수정본} style={{ width: '300px' }} />
+                            <img src={id_8} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -301,7 +308,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_9} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -326,7 +333,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={위험물적재수정본} style={{ width: '300px' }} />
+                            <img src={id_10} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -351,7 +358,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_11} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
@@ -376,7 +383,7 @@ const Test = () => {
                 <Container>
                     <ImageContainer>
                         {showSign ? (
-                            <img src={도시부수정본} style={{ width: '300px' }} />
+                            <img src={id_12} style={{ width: '300px' }} />
                         ) : (
                             <Description>표지판이 의미하는 바에 대해서 적어주세요</Description>
                         )}
