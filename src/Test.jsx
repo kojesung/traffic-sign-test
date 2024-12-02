@@ -18,7 +18,7 @@ const Test = () => {
     const [startTime, setStartTime] = useState(null);
     const [results, setResults] = useState([]);
     const [inputValue, setInputValue] = useState('');
-    const DISPLAY_TIME = 2000;
+    const DISPLAY_TIME = 2800;
 
     const handleStage = () => {
         setStage((prev) => prev + 1);
