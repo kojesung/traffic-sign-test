@@ -94,7 +94,7 @@ const Test = () => {
         case 0:
             return (
                 <Container>
-                    <Title>인공실 실험</Title>
+                    <Title>리빙랩 실험</Title>
                     <Description>
                         표지판이 2초 뒤에 사라집니다.
                         <br />
